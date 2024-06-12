@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+
+namespace StudentDetails
+{
+    class Student
+    {
+        public int StudentId { get; set; }
+        public string Name { get; set; }
+        public string Branch { get; set; }
+        public int Sem { get; set; }
+        public string College { get; set; }
+
+        public Student(int studentId, string name, string branch, int sem, string college)
+        {
+            StudentId = studentId;
+            Name = name;
+            Branch = branch;
+            Sem = sem;
+            College = college;
+        }
+
+        public void DisplayDetails()
+        {
+            Console.WriteLine($"Student ID : {StudentId}");
+            Console.WriteLine($"Name : {Name}");
+            Console.WriteLine($"Branch : {Branch}");
+            Console.WriteLine($"Semester : {Sem}");
+            Console.WriteLine($"College : {College}");
+            Console.WriteLine("----------------------------------");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Student> students = new List<Student>
+            {
+                new Student(1, "Jalindarnath", "Computer Science", 3, "XYZ University"),
+                new Student(2, "Atharva", "Electrical Engineering", 2, "ABC College"),
+                new Student(3, "Danish", "IT Engineering", 4, "DEF Institute"),
+                new Student(4, "Tushar", "Civil Engineering", 1, "GHI University")
+            };
+
+            foreach (var student in students)
+            {
+                student.DisplayDetails();
+            
+            }
+        }
+    }
+}
